@@ -3,7 +3,7 @@ vim.g.maplocalleader = ' '
 
 vim.keymap.set('n', '<leader>e', "<cmd>Explore<CR>", { desc = 'Explorador de arquivos', silent = true })
 vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Salvar arquivo' })
-vim.keymap.set('n', '<leader>q', '<cmd>q<R>', { desc = 'Fechar buffer' })
+vim.keymap.set('n', '<leader>q', '<cmd>close<R>', { desc = 'Fechar buffer' })
 vim.keymap.set('n', '<leader>Q', '<cmd>qa<CR>', { desc = 'Fechar tudo' })
 vim.keymap.set('n', '<leader>h', '<cmd>nohlsearch<CR>', { desc = 'Limpar busca' })
 vim.keymap.set('n', '<leader>t', '<cmd>terminal<CR>', { desc = 'Abrir terminal' })

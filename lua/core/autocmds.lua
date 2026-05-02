@@ -14,15 +14,14 @@ vim.api.nvim_create_autocmd('CursorHold', {
   group = augroup,
   pattern = '*',
   callback = function()
-    local opts = {
-      focusable = false,
-      close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
-      border = 'rounded',
-      source = 'always',
-      prefix = ' ',
-      scope = 'cursor',
-    }
-    vim.diagnostic.open_float(nil, opts)
+    vim.diagnostic.config({
+      virtual_text = false,
+      virtual_lines = true,
+      signs = true,
+      underline = true,
+      update_in_insert = false,
+      severity_sort = true
+    })
   end,
 })
 
@@ -85,3 +84,11 @@ vim.api.nvim_create_autocmd("VimEnter", {
     end
   end,
 })
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*.pdf",
+  callback = function()
+    vim.opt_local.binary = true
+    vim.cmd("%!pdftotext -nopgbrk -q - -")
+  end,
+})
+

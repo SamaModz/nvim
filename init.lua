@@ -17,3 +17,5 @@ end
 
 load_modules_from("core")
 load_modules_from("customs")
+load_modules_from("plugins")
+

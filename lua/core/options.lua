@@ -14,7 +14,7 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.smartindent = true
 vim.opt.wrap = false
-vim.opt.scrolloff = 8
+vim.opt.scrolloff = 2
 vim.opt.mouse = "a"
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -53,3 +53,8 @@ vim.opt.listchars = {
 vim.lsp.log.set_level("error")
 vim.lsp.inlay_hint.enable(true)
 vim.lsp.handlers["$/progress"] = function() end
+
+-- vim.opt.spell = true
+-- vim.opt.spelllang = { "en_us", "pt_br" }
+vim.opt.linebreak = true
+vim.opt.confirm = false
