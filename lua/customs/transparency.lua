@@ -49,4 +49,31 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end,
 })
 
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    for _, group in ipairs(vim.fn.getcompletion("", "highlight")) do
+      local hl = vim.api.nvim_get_hl(0, { name = group })
+
+      hl.bold = false
+      hl.italic = false
+      hl.underline = false
+      hl.undercurl = false
+      hl.strikethrough = false
+
+      vim.api.nvim_set_hl(0, group, hl)
+      vim.api.nvim_set_hl(0, "LspReferenceText", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "LspReferenceRead", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "LspReferenceWrite", { bg = "NONE" })
+
+      vim.api.nvim_set_hl(0, "@lsp.type.parameter", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "@lsp.type.property", { bg = "NONE" })
+      vim.api.nvim_set_hl(0, "@lsp.type.variable", { bg = "NONE" })
+    end
+  end,
+})
+
+-- força aplicar também no tema atual
+vim.cmd("doautocmd ColorScheme")
+
 return M

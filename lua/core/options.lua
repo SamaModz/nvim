@@ -1,6 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.signcolumn = "yes"
+-- vim.opt.signcolumn = "yes"
 vim.opt.cursorline = true
 vim.opt.termguicolors = true
 vim.opt.background = "dark"
@@ -58,3 +58,6 @@ vim.lsp.handlers["$/progress"] = function() end
 -- vim.opt.spelllang = { "en_us", "pt_br" }
 vim.opt.linebreak = true
 vim.opt.confirm = false
+vim.opt.signcolumn = "no"
+vim.opt.colorcolumn = "0"
+

@@ -16,6 +16,8 @@ local function load_modules_from(dir)
 end
 
 load_modules_from("core")
-load_modules_from("customs")
 load_modules_from("plugins")
+load_modules_from("customs")
 
+
+require("vim._core.ui2").enable({})
